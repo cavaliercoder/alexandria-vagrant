@@ -1,11 +1,6 @@
 class alexandria::vagrant (
   
-) {  
-    file { '/home/vagrant/gocode/src/alexandria' :
-        ensure => 'link',
-        target => '/vagrant/src',
-    }
-    
+) {    
     file { '/etc/motd' :
         ensure  => file,
         owner   => 'root',

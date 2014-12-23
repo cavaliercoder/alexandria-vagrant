@@ -31,6 +31,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
   config.vm.network "forwarded_port", guest: 3000, host: 3000 
 
+  config.vm.synced_folder "gocode/", "/home/vagrant/gocode/"
+  
   config.vm.provision "shell", inline: $script
   config.vm.provision "puppet" do |puppet|
     puppet.module_path = "./puppet/modules"

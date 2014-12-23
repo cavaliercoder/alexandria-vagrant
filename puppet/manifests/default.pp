@@ -4,15 +4,8 @@ include ::git
 include ::alexandria::vagrant
 
 $packages = [
-  'github.com/go-martini/martini',      # Martini application stack
-  'github.com/martini-contrib/binding', # Martini request binding
-  'github.com/revel/cmd/revel',         # Revel MVC application stack
-  'gopkg.in/mgo.v2',                    # MongoDB driver
-  'gopkg.in/redis.v2',                  # Redis driver
-  'github.com/codegangsta/gin',         # Gin live reload
-  'github.com/codegangsta/cli'		# CLI framework
-  'gopkg.in/yaml.v2'			# YAML parser
-  'code.google.com/p/go.crypto/bcrypt'	# Password encryption
+  'github.com/cavaliercoder/alexandria',
+  'github.com/cavaliercoder/alexandria-cli'
 ]
 
 go::package { $packages :
