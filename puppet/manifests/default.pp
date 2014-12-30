@@ -5,7 +5,10 @@ include ::alexandria::vagrant
 
 $packages = [
   'github.com/cavaliercoder/alexandria',
-  'github.com/cavaliercoder/alexandria-cli'
+  'github.com/cavaliercoder/alexandria-cli',
+  'github.com/cavaliercoder/alexandria-dashboard',
+  'github.com/pilu/fresh',
+  'github.com/codegangsta/gin'
 ]
 
 go::package { $packages :

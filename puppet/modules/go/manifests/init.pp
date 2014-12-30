@@ -16,7 +16,7 @@ class go (
     #
     # See: https://golang.org/doc/install
     #
-    $prereqs = [ 'mercurial' ]
+    $prereqs = [ 'mercurial', 'bzr' ]
     
     package { $prereqs :
         ensure        => 'present',

@@ -30,6 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puppetlabs/centos-6.5-64-puppet"
  
   config.vm.network "forwarded_port", guest: 3000, host: 3000 
+  config.vm.network "forwarded_port", guest: 9000, host: 9000 
 
   config.vm.synced_folder "gocode/", "/home/vagrant/gocode/"
   
