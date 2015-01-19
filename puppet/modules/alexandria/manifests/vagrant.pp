@@ -8,4 +8,9 @@ class alexandria::vagrant (
         mode    => '0644',
         content => template('alexandria/vagrant/motd.erb')
     }
+
+    service { ['iptables', 'ip6tables'] :
+    	ensure => 'stopped',
+    	enable => false,
+	}
 }
