@@ -36,8 +36,8 @@ SCRIPT
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puppetlabs/centos-6.5-64-puppet"
  
-  config.vm.network "forwarded_port", guest: 3000, host: 3000 
-  config.vm.network "forwarded_port", guest: 4000, host: 4000 
+  config.vm.network "forwarded_port", guest: 4123, host: 4123 # API
+  config.vm.network "forwarded_port", guest: 4124, host: 4124 # Dashboard
   
   config.vm.provision "shell", inline: $script
   config.vm.provision "puppet" do |puppet|
