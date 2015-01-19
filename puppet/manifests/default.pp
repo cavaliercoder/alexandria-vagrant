@@ -8,7 +8,8 @@ $packages = [
   'github.com/cavaliercoder/alexandria-cli',
   'github.com/cavaliercoder/alexandria-dashboard',
   'github.com/pilu/fresh',
-  'github.com/codegangsta/gin'
+  'github.com/codegangsta/gin',
+  'github.com/revel/cmd/revel',
 ]
 
 go::package { $packages :

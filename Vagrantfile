@@ -24,15 +24,20 @@ VAGRANTFILE_API_VERSION = "2"
 $script = <<SCRIPT
 puppet module install puppetlabs/stdlib
 puppet module install puppetlabs/mongodb
+
+# Link $GOPATH/src/github.com/cavaliercoder to /vagrant/projects
+if [[ ! -d /home/vagrant/gocode/src/github.com/cavaliercoder ]]; then
+  mkdir -p /home/vagrant/gocode/src/github.com
+  chown -R vagrant.vagrant /home/vagrant/gocode
+  ln -s /vagrant/projects /home/vagrant/gocode/src/github.com/cavaliercoder
+fi
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puppetlabs/centos-6.5-64-puppet"
  
   config.vm.network "forwarded_port", guest: 3000, host: 3000 
-  config.vm.network "forwarded_port", guest: 9000, host: 9000 
-
-  config.vm.synced_folder "gocode/", "/home/vagrant/gocode/"
+  config.vm.network "forwarded_port", guest: 4000, host: 4000 
   
   config.vm.provision "shell", inline: $script
   config.vm.provision "puppet" do |puppet|
