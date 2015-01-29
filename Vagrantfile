@@ -38,6 +38,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
   config.vm.network "forwarded_port", guest: 4123, host: 4123 # API
   config.vm.network "forwarded_port", guest: 4124, host: 4124 # Dashboard
+  config.vm.network "forwarded_port", guest: 27017, host: 27017 # MongoDB
+  config.vm.network "forwarded_port", guest: 28017, host: 28017 # MongoDB Status page
   
   config.vm.provision "shell", inline: $script
   config.vm.provision "puppet" do |puppet|
