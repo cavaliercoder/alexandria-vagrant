@@ -14,6 +14,8 @@ To get started, install VirtualBox and Vagrant, then from your cloned source:
 Vagrant will then download a ~400mb CentOS 6.5 image from PuppetLabs with Puppet preconfigured.
 Puppet will then be invoked to install and configure a development environment and clone Alexandria sources.
 
+For more information, see the [Alexandria CMDB docs](http://cavaliercoder.github.io/alexandria-docs/).
+
 ## License
 
 Alexandria CMDB - Open source configuration management database
